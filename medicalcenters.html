@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Медицинские центры</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="" rel="shortcut icon" type="image/x-icon">
+    <link href="" rel="icon" sizes="16x16" type="image/png">
+    <link href="" rel="icon" sizes="32x32" type="image/png">
+    <link href="" rel="icon" sizes="96x96" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="wwwroot/css/base.css" rel="stylesheet" type="text/css">
+    <link href="wwwroot/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <h5>
+                <a asp-action="Index" asp-area="" asp-controller="Home" asp-route-id="" href="index.html">РТМ-Диагностика</a>
+            </h5>
+        </div>
+        <nav class="header-nav">
+            <a asp-action="About" asp-area="" asp-controller="Home" asp-route-id="" class="nav-link" href="about.html">О нас</a>
+            <a asp-action="Technologies" asp-area="" asp-controller="Home" asp-route-id="" class="nav-link" href="technologies.html">Технологии</a>
+        </nav>
+        <div class="header-login">
+            <!-- <a asp-action="Cabinet" asp-area="" asp-controller="Cabinet" asp-route-id="" class="button-md button-secondary" href="registration.html">
+                <i data-icon="user"></i>
+                <span>Личный кабинет</span>
+            </a> -->
+            <div class="dropdown">
+                <button class="button-md button-secondary" type="button">
+                    <i data-icon="user"></i>
+                    <span>Личный кабинет</span>
+                </button>
+                <ul class="dropdown-list">
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="">
+                            <p class="text-md">Личный кабинет</p>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="">
+                            <p class="text-md">Выйти</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="cabinet">
+            <aside class="cabinet-aside">
+                <button class="button-md button-icon button-subtle" id="closeProfile" title="Закрыть" type="button">
+                    <i data-icon="x"></i>
+                </button>
+                <div class="profile">
+                    <figure class="profile-thumb">
+                        <img alt="" class="profile-img" src="wwwroot/images/avatar.png">
+                    </figure>
+                    <ul class="profile-list">
+                        <li class="profile-item">
+                            <span class="desc">ФИО</span>
+                            <p class="text-lg">Виноградов Николай Олегович</p>
+                        </li>
+                        <li class="profile-item">
+                            <span class="desc">Регистрационный номер</span>
+                            <p class="text-lg">1756-5956</p>
+                        </li>
+                        <li class="profile-item">
+                            <span class="desc">Дата рождения</span>
+                            <p class="text-lg">21.04.1984</p>
+                        </li>
+                        <li class="profile-item">
+                            <span class="desc">Электронная почта</span>
+                            <p class="text-lg">vinogradov@mail.ru</p>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="cabinet-body">
+                <header class="cabinet-header">
+                    <div class="cabinet-title">
+                        <h2 class="text-xxxl">Медицинские центры</h2>
+                        <button class="button-md button-subtle" id="openProfile" type="button">Профиль</button>
+                    </div>
+                    <div class="cabinet-action">
+                        <a class="link" href="cabinet.html">Обратно в личный кабинет</a>
+                    </div>
+                </header>
+                <div class="medical-centers">
+                    <ul class="medical-centers-list">
+                        <li class="medical-centers-item">
+                            <div class="row" data-columns="2">
+                                <div class="column">
+                                    <span class="desc">Название</span>
+                                    <p class="text-lg">Медицинский центр № 2</p>
+                                </div>
+                                <div class="column">
+                                    <span class="desc">Адрес</span>
+                                    <p class="text-lg">572358, Московская область, город Мытищи, пер. Чехова, 29</p>
+                                </div>
+                                <div class="column">
+                                    <span class="desc">Телефон</span>
+                                    <p class="text-lg">+7 994 652-89-52</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="medical-centers-item">
+                            <div class="row" data-columns="2">
+                                <div class="column">
+                                    <span class="desc">Название</span>
+                                    <p class="text-lg">Медицинский центр № 1</p>
+                                </div>
+                                <div class="column">
+                                    <span class="desc">Адрес</span>
+                                    <p class="text-lg">986206, Смоленская область, город Егорьевск, наб. Гоголя, 67</p>
+                                </div>
+                                <div class="column">
+                                    <span class="desc">Телефон</span>
+                                    <p class="text-lg">+7 998 493-96-36</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="text-md">© 2021–2022 <a class="link" href="index.html">РТМ-Диагностика</a></p>
+    </footer>
+    <script src="wwwroot/js/jquery.min.js"></script>
+    <script src="wwwroot/js/headroom.min.js"></script>
+    <script src="wwwroot/js/jQuery.headroom.min.js"></script>
+    <script src="wwwroot/js/script.js"></script>
+</body>
+
+</html>

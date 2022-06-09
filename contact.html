@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Персональные данные</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="" rel="shortcut icon" type="image/x-icon">
+    <link href="" rel="icon" sizes="16x16" type="image/png">
+    <link href="" rel="icon" sizes="32x32" type="image/png">
+    <link href="" rel="icon" sizes="96x96" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="wwwroot/css/base.css" rel="stylesheet" type="text/css">
+    <link href="wwwroot/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <a asp-action="Index" asp-area="" asp-controller="Home" asp-route-id="" href="index.html">
+                <h5 class="text-lg">РТМ-Диагностика</h5>
+            </a>
+        </div>
+        <nav class="header-nav">
+            <a asp-action="About" asp-area="" asp-controller="Home" asp-route-id="" class="nav-link" href="about.html">О нас</a>
+            <a asp-action="Technologies" asp-area="" asp-controller="Home" asp-route-id="" class="nav-link" href="technologies.html">Технологии</a>
+        </nav>
+        <div class="header-login">
+            <!-- <a asp-action="Cabinet" asp-area="" asp-controller="Cabinet" asp-route-id="" class="button-md button-secondary" href="registration.html">
+                <i data-icon="user"></i>
+                <span>Личный кабинет</span>
+            </a> -->
+            <div class="dropdown">
+                <button class="button-md button-secondary" type="button">
+                    <i data-icon="user"></i>
+                    <span>Личный кабинет</span>
+                </button>
+                <ul class="dropdown-list">
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="">
+                            <p class="text-md">Личный кабинет</p>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="">
+                            <p class="text-md">Выйти</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="cabinet">
+            <aside class="cabinet-aside">
+                <button class="button-md button-icon button-subtle" id="closeProfile" title="Закрыть" type="button">
+                    <i data-icon="x"></i>
+                </button>
+                <div class="profile">
+                    <figure class="profile-thumb">
+                        <img alt="" class="profile-img" src="wwwroot/images/avatar.png">
+                    </figure>
+                    <ul class="profile-list">
+                        <li class="profile-item">
+                            <span class="desc">ФИО</span>
+                            <p class="text-lg">Виноградов Николай Олегович</p>
+                        </li>
+                        <li class="profile-item">
+                            <span class="desc">Регистрационный номер</span>
+                            <p class="text-lg">1756-5956</p>
+                        </li>
+                        <li class="profile-item">
+                            <span class="desc">Дата рождения</span>
+                            <p class="text-lg">21.04.1984</p>
+                        </li>
+                        <li class="profile-item">
+                            <span class="desc">Электронная почта</span>
+                            <p class="text-lg">vinogradov@mail.ru</p>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="cabinet-body">
+                <header class="cabinet-header">
+                    <div class="cabinet-title">
+                        <h2 class="text-xxxl">Персональные данные</h2>
+                        <button class="button-md button-subtle" id="openProfile" type="button">Профиль</button>
+                    </div>
+                    <div class="cabinet-action">
+                        <a class="link" href="cabinet.html">Обратно в личный кабинет</a>
+                    </div>
+                </header>
+                <div class="contact">
+                    <form asp-action="Contact" asp-anti-forgery="true" asp-controller="Cabinet" class="contact-form" method="post">
+                        <div asp-validation-summary="ModelOnly" class="validation is-hidden"></div>
+                        <div class="row" data-columns="2">
+                            <div class="column">
+                                <label class="desc">Имя</label>
+                                <input asp-for="Name" class="input-lg input-subtle" placeholder="Имя" value="@Model.Name">
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Фамилия</label>
+                                <input asp-for="Surname" class="input-lg input-subtle" placeholder="Фамилия" value="@Model.Surname">
+                                <span asp-validation-for="Surname"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Отчество</label>
+                                <input asp-for="Patronymic" class="input-lg input-subtle" placeholder="Отчество" value="@Model.Patronymic">
+                                <span asp-validation-for="Patronymic"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Пол</label>
+                                <input asp-for="Sex" class="input-lg input-subtle" placeholder="Пол" value="@Model.Sex">
+                                <span asp-validation-for="Sex"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Дата рождения</label>
+                                <input asp-for="DateOfBirth" class="input-lg input-subtle" placeholder="Дата рождения" value="@Model.DateOfBirth">
+                                <span asp-validation-for="DateOfBirth"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Страна</label>
+                                <input asp-for="Country" class="input-lg input-subtle" placeholder="Страна" value="@Model.Country">
+                                <span asp-validation-for="Country"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Основной телефон</label>
+                                <input asp-for="TelephonePrimary" class="input-lg input-subtle" placeholder="Телефон" value="@Model.TelephonePrimary">
+                                <span asp-validation-for="TelephonePrimary"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Дополнительный телефон</label>
+                                <input asp-for="TelephoneExtra" class="input-lg input-subtle" placeholder="Телефон доп" value="@Model.TelephoneExtra">
+                                <span asp-validation-for="TelephoneExtra"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Электронная почта</label>
+                                <input asp-for="Email" class="input-lg input-subtle" placeholder="Электронная почта" value="@Model.Email">
+                                <span asp-validation-for="Email"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Адрес и индекс</label>
+                                <input asp-for="PostcodeAndAddress" class="input-lg input-subtle" placeholder="Адрес" value="@Model.PostcodeAndAddress">
+                                <span asp-validation-for="PostcodeAndAddress"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Полис ОМС</label>
+                                <input asp-for="PolicyOMS" class="input-lg input-subtle" placeholder="Полис ОМС" value="@Model.PolicyOMS">
+                                <span asp-validation-for="PolicyOMS"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Полис ДМС</label>
+                                <input asp-for="PolicyDMS" class="input-lg input-subtle" placeholder="Полис ДМС" value="@Model.PolicyDMS">
+                                <span asp-validation-for="PolicyDMS"></span>
+                            </div>
+                            <div class="column">
+                                <input asp-for="PatientCode" class="input-lg input-subtle" hidden id="patientCode" placeholder="Имя" value="@Model.PatientCode">
+                                <span asp-validation-for="PatientCode"></span>
+                            </div>
+                            <div class="column">
+                                <button class="button-lg button-primary" id="saveContactInfo" type="submit">Сохранить изменения</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="text-md">© 2021–2022 <a class="link" href="index.html">РТМ-Диагностика</a></p>
+    </footer>
+    <script src="wwwroot/js/jquery.min.js"></script>
+    <script src="wwwroot/js/headroom.min.js"></script>
+    <script src="wwwroot/js/jQuery.headroom.min.js"></script>
+    <script src="wwwroot/js/script.js"></script>
+</body>
+
+</html>
