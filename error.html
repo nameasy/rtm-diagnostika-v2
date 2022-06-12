@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="wwwroot/css/base.css" rel="stylesheet" type="text/css">
-    <link href="wwwroot/css/style.css" rel="stylesheet" type="text/css">
+    <link href="wwwroot/css/base.min.css" rel="stylesheet" type="text/css">
+    <link href="wwwroot/css/style.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -26,23 +26,38 @@
             </a>
         </div>
         <nav class="header-nav">
-            <a asp-action="About" asp-area="" asp-controller="Home" asp-route-id="" class="nav-link" href="about.html">О нас</a>
-            <a asp-action="Technologies" asp-area="" asp-controller="Home" asp-route-id="" class="nav-link" href="technologies.html">Технологии</a>
+            <a asp-action="About" asp-area="" asp-controller="Home" asp-route-id="" class="header-nav-link" href="about.html">О нас</a>
+            <a asp-action="Technologies" asp-area="" asp-controller="Home" asp-route-id="" class="header-nav-link" href="technologies.html">Технологии</a>
         </nav>
         <div class="header-login">
-            <a asp-action="Cabinet" asp-area="" asp-controller="Cabinet" asp-route-id="" class="button-md button-secondary" href="registration.html">
+            <a asp-action="Cabinet" asp-area="" asp-controller="Cabinet" asp-route-id="" class="button-md" href="registration.html">
                 <i data-icon="user"></i>
                 <span>Личный кабинет</span>
             </a>
-            <!-- <div class="dropdown" id="toggleDropdown">
-                <button class="button-md button-secondary" type="button">
+            <!-- <div class="dropdown">
+                <button class="button-md" type="button">
                     <i data-icon="user"></i>
                     <span>Личный кабинет</span>
                 </button>
                 <ul class="dropdown-list">
                     <li class="dropdown-item">
-                        <a class="dropdown-link" href="">
+                        <a class="dropdown-link" href="cabinet.html">
                             <p class="text-md">Личный кабинет</p>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="medicalcenters.html">
+                            <p class="text-md">Медицинские центры</p>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="examinations.html">
+                            <p class="text-md">Обследования</p>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="contact.html">
+                            <p class="text-md">Персональные данные</p>
                         </a>
                     </li>
                     <li class="dropdown-item">

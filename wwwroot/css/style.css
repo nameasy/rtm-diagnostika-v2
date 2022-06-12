@@ -1,3 +1,7 @@
+:focus {
+    outline: none
+}
+
 html,
 body {
     overflow-x: hidden
@@ -14,11 +18,10 @@ form > :not(:last-child) {
     margin-bottom: var(--space-md)
 }
 
-:focus {
-    outline: none
+form button,
+form input {
+    width: 100% !important
 }
-
-/* components */
 
 button,
 .button-sm,
@@ -35,7 +38,7 @@ textarea,
     appearance: none;
     background-color: var(--color-gray-lighter);
     border: 2px solid transparent;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     color: var(--color-black);
     font: 400 var(--text-md)/1.2 "Nunito Sans", sans-serif;
     font-family: "Nunito Sans", sans-serif;
@@ -101,16 +104,12 @@ button,
 .button-md,
 .button-lg {
     align-items: center;
-    background-origin: border-box;
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
-    overflow: visible;
+    position: relative;
     text-decoration: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
+    /* white-space: nowrap; */
     width: fit-content
 }
 
@@ -163,14 +162,14 @@ button > :not(:last-child),
     width: calc(1.2 * var(--text-lg) + 2 * var(--space-md) + 2 * 2px)
 }
 
-button span,
 button i,
-.button-sm span,
+button span,
 .button-sm i,
-.button-md span,
+.button-sm span,
 .button-md i,
-.button-lg span,
-.button-lg i {
+.button-md span,
+.button-lg i,
+.button-lg span {
     color: var(--color-black)
 }
 
@@ -179,18 +178,6 @@ button i,
 .button-md i,
 .button-lg i {
     flex-shrink: 0
-}
-
-.button-sm span {
-    font-size: var(--text-sm)
-}
-
-.button-md span {
-    font-size: var(--text-md)
-}
-
-.button-lg span {
-    font-size: var(--text-lg)
 }
 
 .button-sm i {
@@ -206,6 +193,18 @@ button i,
 .button-lg i {
     height: var(--text-lg);
     width: var(--text-lg)
+}
+
+.button-sm span {
+    font-size: var(--text-sm)
+}
+
+.button-md span {
+    font-size: var(--text-md)
+}
+
+.button-lg span {
+    font-size: var(--text-lg)
 }
 
 .button-primary {
@@ -228,20 +227,6 @@ button i,
 .button-subtle {
     background-color: transparent;
     border: 2px solid var(--color-gray-light)
-}
-
-.button-secondary {
-    background-color: transparent !important;
-    border: 0 none !important;
-    border-radius: 0 !important;
-    height: auto !important;
-    padding: 0 !important
-}
-
-.button-secondary:hover,
-.button-secondary:focus {
-    background-color: transparent;
-    opacity: .5
 }
 
 input,
@@ -293,7 +278,7 @@ textarea::placeholder {
 .dropdown-list {
     background-color: var(--color-white);
     border: 2px solid var(--color-gray-light);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     height: fit-content;
     left: 0;
     opacity: 0;
@@ -313,19 +298,18 @@ textarea::placeholder {
 }
 
 .dropdown-item {
+    border-bottom: 2px solid var(--color-gray-light);
     cursor: pointer;
     padding: var(--space-sm) var(--space-md)
 }
 
-.dropdown-item:not(:last-of-type) {
-    border-bottom: 2px solid var(--color-gray-light)
+.dropdown-item:last-of-type {
+    border-bottom: 0
 }
 
 .dropdown-item:hover {
     background-color: var(--color-gray-light)
 }
-
-/* header */
 
 .header {
     align-items: center;
@@ -357,7 +341,7 @@ textarea::placeholder {
     padding-left: var(--space-md)
 }
 
-.nav-link {
+.header-nav-link {
     color: var(--color-black);
     font-size: var(--text-md);
     margin-right: var(--space-sm);
@@ -365,16 +349,16 @@ textarea::placeholder {
     white-space: nowrap
 }
 
-.nav-link.is-active {
-    opacity: .5
-}
-
-.nav-link:hover {
-    opacity: .5
-}
-
-.nav-link:last-of-type {
+.header-nav-link:last-of-type {
     margin-right: 0
+}
+
+.header-nav-link.is-active {
+    opacity: .5
+}
+
+.header-nav-link:hover {
+    opacity: .5
 }
 
 .header-login {
@@ -395,14 +379,10 @@ textarea::placeholder {
     overflow-y: hidden
 }
 
-/* main */
-
 .main {
     flex-grow: 1;
     padding: var(--space-lg) var(--space-xl)
 }
-
-/* footer */
 
 .footer {
     display: flex;
@@ -410,8 +390,6 @@ textarea::placeholder {
     justify-content: center;
     padding: var(--space-lg) var(--space-xl)
 }
-
-/* article */
 
 .article {
     margin-left: auto;
@@ -427,7 +405,9 @@ textarea::placeholder {
     margin-bottom: var(--space-sm)
 }
 
-/* cabinet */
+.article-content img {
+    border-radius: var(--radius-xl)
+}
 
 .cabinet {
     display: flex;
@@ -454,7 +434,7 @@ textarea::placeholder {
     margin-bottom: var(--space-md)
 }
 
-.cabinet-title {
+.cabinet-header-title {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -462,7 +442,7 @@ textarea::placeholder {
     position: relative
 }
 
-.cabinet-title:last-child {
+.cabinet-header-title:last-child {
     margin-bottom: 0
 }
 
@@ -474,19 +454,10 @@ textarea::placeholder {
     display: none
 }
 
-/* contact */
-
-.contact-form button,
-.contact-form input {
-    width: 100%
-}
-
-/* profile */
-
 .profile {
     /* background-color: var(--color-white); */
     border: 2px solid var(--color-gray-light);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-xl);
     overflow: hidden;
     padding: var(--space-md) var(--space-lg)
 }
@@ -520,8 +491,6 @@ textarea::placeholder {
     margin-bottom: 0
 }
 
-/* exams */
-
 .exams-control {
     display: flex;
     flex-wrap: wrap;
@@ -536,7 +505,7 @@ textarea::placeholder {
 
 .exams-list {
     border: 2px solid var(--color-gray-light);
-    border-radius: var(--radius-md)
+    border-radius: var(--radius-xl)
 }
 
 .exams-item {
@@ -553,11 +522,9 @@ textarea::placeholder {
     margin-bottom: var(--space-md)
 }
 
-/* medical-centers */
-
 .medical-centers-list {
     border: 2px solid var(--color-gray-light);
-    border-radius: var(--radius-md)
+    border-radius: var(--radius-xl)
 }
 
 .medical-centers-item {
@@ -570,11 +537,9 @@ textarea::placeholder {
     border-bottom: none
 }
 
-/* menu */
-
 .menu-list {
     border: 2px solid var(--color-gray-light);
-    border-radius: var(--radius-md)
+    border-radius: var(--radius-xl)
 }
 
 .menu-item {
@@ -586,8 +551,6 @@ textarea::placeholder {
 .menu-item:last-of-type {
     border-bottom: none
 }
-
-/* login */
 
 .login {
     margin-left: auto;
@@ -604,28 +567,28 @@ textarea::placeholder {
     margin-bottom: var(--space-md)
 }
 
-.input-group {
+.login-input {
     overflow: hidden;
     position: relative
 }
 
-.input-group input {
+.login-input input {
     border-bottom: none;
     border-radius: 0
 }
 
-.input-group input:first-of-type {
+.login-input input:first-of-type {
     border-top-left-radius: var(--radius-sm);
     border-top-right-radius: var(--radius-sm)
 }
 
-.input-group input:last-of-type {
+.login-input input:last-of-type {
     border-bottom: 2px solid var(--color-gray-light);
     border-bottom-left-radius: var(--radius-sm);
     border-bottom-right-radius: var(--radius-sm)
 }
 
-.column.column-end {
+.align-self-end {
     align-self: end
 }
 
@@ -662,10 +625,8 @@ i,
 .icon-sm,
 .icon-md,
 .icon-lg {
-    background-position: 50% 50%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
     background-size: var(--text-md);
     content: "";
     display: inline-block;
@@ -674,7 +635,6 @@ i,
     width: var(--text-md);
     /* flex-shrink: 0;
     height: var(--size);
-    line-height: 1;
     max-width: initial;
     width: var(--size);
     --size: 1em */
@@ -715,7 +675,8 @@ i,
 .link {
     border-bottom: 2px solid var(--color-green-light);
     color: var(--color-green-dark);
-    font: 400 var(--text-md)/1.2 "Nunito Sans", sans-serif
+    font: 400 var(--text-md)/1.2 "Nunito Sans", sans-serif;
+    font-size: inherit
 }
 
 .link:hover,
@@ -727,8 +688,6 @@ i,
     border-bottom: 2px solid var(--color-gray-light);
     width: 100%
 }
-
-/* aspect-ratio */
 
 [class^=aspect-ratio-] {
     height: 0;
@@ -806,8 +765,6 @@ i,
     --aspect-ratio: calc(32 / 9)
 }
 
-/* font-size */
-
 .text-xs {
     font-size: var(--text-xs)
 }
@@ -847,8 +804,7 @@ i,
 
     .header-login a,
     .header-login button {
-        padding: 0;
-        min-width: 0
+        padding: 0
     }
 
     .header-login a i,
@@ -969,16 +925,16 @@ i,
         width: 100%
     }
 
-    .cabinet-title {
+    .cabinet-header-title {
         align-items: flex-start;
         flex-direction: column
     }
 
-    .cabinet-title button {
+    .cabinet-header-title button {
         width: 100%
     }
 
-    .cabinet-title > :not(:last-child) {
+    .cabinet-header-title > :not(:last-child) {
         margin-bottom: var(--space-xxs)
     }
 
@@ -1055,6 +1011,98 @@ i,
     }
 }
 
-.field-validation-error {
-    color: var(--red-primary) !important
+.checkbox-sm input,
+.checkbox-md input,
+.checkbox-lg input {
+    height: 0;
+    margin: 0 !important;
+    opacity: 0;
+    padding: 0 !important;
+    position: absolute;
+    width: 0
+}
+
+.checkbox-sm label {
+    font-size: var(--text-sm);
+    line-height: 1.2 !important
+}
+
+.checkbox-md label {
+    font-size: var(--text-md);
+    line-height: 1.2 !important
+}
+
+.checkbox-lg label {
+    font-size: var(--text-lg);
+    line-height: 1.2 !important
+}
+
+.checkbox-sm input + label,
+.checkbox-md input + label,
+.checkbox-lg input + label {
+    align-items: flex-start;
+    cursor: pointer;
+    display: inline-flex
+}
+
+.checkbox-sm input + label::before,
+.checkbox-md input + label::before,
+.checkbox-lg input + label::before {
+    background-color: var(--color-white);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: var(--text-md);
+    border: 2px solid var(--color-gray-light);
+    border-radius: var(--radius-xs);
+    content: "";
+    display: inline-block;
+    flex-shrink: 0;
+    height: var(--text-md);
+    margin-right: var(--space-xxs);
+    position: relative;
+    top: calc((1.2 * var(--text-md) - var(--text-md)) / 2);
+    transition: .125s ease-in-out;
+    transition-property: background-color, border-color, color, opacity, transform, visibility;
+    width: var(--text-md)
+}
+
+.checkbox-sm input + label:hover::before,
+.checkbox-md input + label:hover::before,
+.checkbox-lg input + label:hover::before {
+    background-color: var(--color-gray-light)
+}
+
+.checkbox-sm input + label::before {
+    background-size: var(--text-sm);
+    height: var(--text-sm);
+    top: calc((1.2 * var(--text-sm) - var(--text-sm)) / 2);
+    width: var(--text-sm)
+}
+
+.checkbox-md input + label::before {
+    background-size: var(--text-md);
+    height: var(--text-md);
+    top: calc((1.2 * var(--text-md) - var(--text-md)) / 2);
+    width: var(--text-md)
+}
+
+.checkbox-lg input + label::before {
+    background-size: var(--text-lg);
+    height: var(--text-lg);
+    top: calc((1.2 * var(--text-lg) - var(--text-lg)) / 2);
+    width: var(--text-lg)
+}
+
+.checkbox-sm input:checked + label::before,
+.checkbox-md input:checked + label::before,
+.checkbox-lg input:checked + label::before {
+    background-color: var(--color-green-dark);
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    border-color: var(--color-green-dark)
+}
+
+.checkbox-sm input:checked + label:hover::before,
+.checkbox-md input:checked + label:hover::before,
+.checkbox-lg input:checked + label:hover::before {
+    background-color: var(--color-green-dark)
 }
