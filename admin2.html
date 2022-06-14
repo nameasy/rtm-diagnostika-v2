@@ -62,36 +62,55 @@
                         <h2 class="text-xxxl">Панель администрирования</h2>
                     </div>
                 </header>
-                <div class="menu-v2">
-                    <ul class="menu-v2-list">
-                        <li class="menu-v2-item">
-                            <span class="desc">Медицинские центры</span>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 1</a>
-                            </p>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 2</a>
-                            </p>
-                        </li>
-                        <li class="menu-v2-item">
-                            <span class="desc">Обследования</span>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 3</a>
-                            </p>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 4</a>
-                            </p>
-                        </li>
-                        <li class="menu-v2-item">
-                            <span class="desc">Персональные данные</span>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 5</a>
-                            </p>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 6</a>
-                            </p>
-                        </li>
-                    </ul>
+                <div class="admin">
+                    <form asp-action="Contact" asp-anti-forgery="true" asp-controller="Cabinet" class="admin-form" method="post">
+                        <div asp-validation-summary="ModelOnly" class="validation is-hidden"></div>
+                        <p class="text-xl">Данные типа «А»</p>
+                        <div class="row" data-columns="2">
+                            <div class="column">
+                                <label class="desc">Имя</label>
+                                <input asp-for="Name" class="input-lg input-subtle" placeholder="Имя" value="@Model.Name">
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                            <div class="column align-self-end">
+                                <button class="button-lg button-primary" id="saveContactInfo" type="submit">Сохранить изменения</button>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <p class="text-xl">Данные типа «Б»</p>
+                        <div class="row" data-columns="2">
+                            <div class="column">
+                                <label class="desc">Имя</label>
+                                <input asp-for="Name" class="input-lg input-subtle" placeholder="Имя" value="@Model.Name">
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Фамилия</label>
+                                <input asp-for="Surname" class="input-lg input-subtle" placeholder="Фамилия" value="@Model.Surname">
+                                <span asp-validation-for="Surname"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Отчество</label>
+                                <input asp-for="Patronymic" class="input-lg input-subtle" placeholder="Отчество" value="@Model.Patronymic">
+                                <span asp-validation-for="Patronymic"></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Пол</label>
+                                <input asp-for="Sex" class="input-lg input-subtle" placeholder="Пол" value="@Model.Sex">
+                                <span asp-validation-for="Sex"></span>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <p class="text-xl">Плюс ещё</p>
+                        <div class="row" data-columns="1">
+                            <div class="column">
+                                <div class="checkbox-lg">
+                                    <input checked id="checkbox_1" type="checkbox" value="1">
+                                    <label for="checkbox_1">Я даю согласие на что-то там…</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

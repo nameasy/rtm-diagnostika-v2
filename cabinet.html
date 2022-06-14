@@ -46,21 +46,6 @@
                         </a>
                     </li>
                     <li class="dropdown-item">
-                        <a class="dropdown-link" href="medicalcenters.html">
-                            <p class="text-md">Медицинские центры</p>
-                        </a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a class="dropdown-link" href="examinations.html">
-                            <p class="text-md">Обследования</p>
-                        </a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a class="dropdown-link" href="contact.html">
-                            <p class="text-md">Персональные данные</p>
-                        </a>
-                    </li>
-                    <li class="dropdown-item">
                         <a class="dropdown-link" href="">
                             <p class="text-md">Выйти</p>
                         </a>
@@ -109,31 +94,13 @@
                 <div class="menu">
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <span class="desc">Медицинские центры</span>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 1</a>
-                            </p>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 2</a>
-                            </p>
+                            <a asp-action="Contact" asp-area="" asp-controller="Cabinet" class="menu-link" href="contact.html">Персональные данные</a>
                         </li>
                         <li class="menu-item">
-                            <span class="desc">Обследования</span>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 3</a>
-                            </p>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 4</a>
-                            </p>
+                            <a asp-action="MedicalCenters" asp-area="" asp-controller="Cabinet" class="menu-link" href="medicalcenters.html">Медицинские центры</a>
                         </li>
                         <li class="menu-item">
-                            <span class="desc">Персональные данные</span>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 5</a>
-                            </p>
-                            <p class="text-lg">
-                                <a class="link" href="">Ссылка № 6</a>
-                            </p>
+                            <a asp-action="Examinations" asp-area="" asp-controller="Cabinet" asp-route-date="all" class="menu-link" href="examinations.html">Обследования</a>
                         </li>
                     </ul>
                 </div>
