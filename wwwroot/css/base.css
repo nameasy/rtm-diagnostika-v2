@@ -37,16 +37,11 @@
     --space-unit: 1rem;
     --text-scale-ratio: 1.25;
     --text-unit: 1.125rem;
-    --max-width-xs: 38em;
-    /* 608px */
-    --max-width-sm: 48em;
-    /* 768px */
-    --max-width-md: 64em;
-    /* 1024px */
-    --max-width-lg: 80em;
-    /* 1280px */
-    --max-width-xl: 90em;
-    /* 1440px */
+    --max-width-xs: 38em; /* 608px */
+    --max-width-sm: 48em; /* 768px */
+    --max-width-md: 64em; /* 1024px */
+    --max-width-lg: 80em; /* 1280px */
+    --max-width-xl: 90em; /* 1440px */
     --radius-xxxxs: calc(0.125 * var(--radius));
     --radius-xxxs: calc(0.25 * var(--radius));
     --radius-xxs: calc(0.375 * var(--radius));
@@ -57,7 +52,7 @@
     --radius-xl: calc(3.25 * var(--radius));
     --radius-xxl: calc(5.25 * var(--radius));
     --radius-xxxl: calc(8.5 * var(--radius));
-    --radius-xxxxl: calc(13.75 * var(--radius));
+    --radius-xxxxl: calc(13.75 * var(--radius))
 }
 
 @media screen and (max-width: 80em) {
