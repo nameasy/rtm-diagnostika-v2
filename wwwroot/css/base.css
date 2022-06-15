@@ -225,7 +225,7 @@ table {
 }
 
 .field-validation-error {
-    color: var(--red-primary) !important
+    color: var(--color-red-dark) !important
 }
 
 .is-hidden {
