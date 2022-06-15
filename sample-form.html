@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Форма для ввода данных</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="" rel="shortcut icon" type="image/x-icon">
+    <link href="" rel="icon" sizes="16x16" type="image/png">
+    <link href="" rel="icon" sizes="32x32" type="image/png">
+    <link href="" rel="icon" sizes="96x96" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="wwwroot/css/base.min.css" rel="stylesheet" type="text/css">
+    <link href="wwwroot/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="alert">
+        <p class="text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis massa non.</p>
+        <button class="button-md button-icon button-subtle" title="Закрыть" type="button">
+            <i data-icon="x"></i>
+        </button>
+    </div>
+    <header class="header">
+        <div class="header-logo">
+            <a asp-action="Index" asp-area="" asp-controller="Home" asp-route-id="" href="index.html">
+                <h5 class="text-lg">РТМ-Диагностика</h5>
+            </a>
+        </div>
+        <nav class="header-nav">
+            <a asp-action="About" asp-area="" asp-controller="Home" asp-route-id="" class="header-nav-link" href="about.html">О нас</a>
+            <a asp-action="Technologies" asp-area="" asp-controller="Home" asp-route-id="" class="header-nav-link" href="technologies.html">Технологии</a>
+        </nav>
+        <div class="header-login">
+            <a asp-action="Cabinet" asp-area="" asp-controller="Cabinet" asp-route-id="" class="button-md" href="registration.html">
+                <i data-icon="user"></i>
+                <span>Личный кабинет</span>
+            </a>
+            <!-- <div class="dropdown">
+                <button class="button-md" type="button">
+                    <i data-icon="user"></i>
+                    <span>Личный кабинет</span>
+                </button>
+                <ul class="dropdown-list">
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="cabinet.html">
+                            <p class="text-md">Личный кабинет</p>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="dropdown-link" href="">
+                            <p class="text-md">Выйти</p>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </header>
+    <main class="main">
+        <div class="cabinet">
+            <div class="cabinet-body">
+                <header class="cabinet-header">
+                    <div class="cabinet-header-title">
+                        <h2 class="text-xxxl">Форма для ввода данных</h2>
+                    </div>
+                </header>
+                <div class="admin">
+                    <form asp-action="Contact" asp-anti-forgery="true" asp-controller="Cabinet" class="admin-form" method="post">
+                        <div asp-validation-summary="ModelOnly" class="validation is-hidden"></div>
+                        <p class="text-xl">Подзаголовок 1</p>
+                        <div class="row" data-columns="1">
+                            <div class="column">
+                                <label class="desc">Лейбл 1.1</label>
+                                <input asp-for="" class="input-lg input-subtle" placeholder="Инпут 1.1" value="">
+                                <span asp-validation-for=""></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Лейбл 1.2</label>
+                                <input asp-for="" class="input-lg input-subtle" placeholder="Инпут 1.2" value="">
+                                <span asp-validation-for=""></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Лейбл 1.3</label>
+                                <select class="select-lg select-subtle">
+                                    <option selected>Селект 1.1</option>
+                                    <option value="">Селект 1.2</option>
+                                    <option value="">Селект 1.3</option>
+                                    <option value="">Селект 1.4</option>
+                                    <option value="">Селект 1.5</option>
+                                </select>
+                            </div>
+                            <div class="column align-self-end">
+                                <button class="button-lg button-primary" id="saveContactInfo" type="submit">Сохранить изменения</button>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <p class="text-xl">Подзаголовок 2</p>
+                        <div class="row" data-columns="1">
+                            <div class="column">
+                                <label class="desc">Лейбл 2.1</label>
+                                <input asp-for="" class="input-lg input-subtle" placeholder="Инпут 2.1" value="">
+                                <span asp-validation-for=""></span>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Лейбл 2.2</label>
+                                <textarea class="textarea-lg textarea-subtle" placeholder="Текстареа 2.1"></textarea>
+                            </div>
+                            <div class="column">
+                                <label class="desc">Лейбл 2.3</label>
+                                <div class="checkbox-lg">
+                                    <input checked id="checkbox_1" type="checkbox" value="1">
+                                    <label for="checkbox_1">Чекбокс 2.1</label>
+                                </div>
+                                <div class="checkbox-lg">
+                                    <input id="checkbox_2" type="checkbox" value="2">
+                                    <label for="checkbox_2">Чекбокс 2.2</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="text-md">© 2021–2022 <a class="link" href="index.html">РТМ-Диагностика</a></p>
+    </footer>
+    <script src="wwwroot/js/jquery.min.js"></script>
+    <script src="wwwroot/js/headroom.min.js"></script>
+    <script src="wwwroot/js/jQuery.headroom.min.js"></script>
+    <script src="wwwroot/js/script.js"></script>
+</body>
+
+</html>
