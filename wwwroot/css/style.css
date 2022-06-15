@@ -1271,6 +1271,12 @@ i,
 
 @media screen and (max-width: 48em) {
     .alert {
-        margin: var(--space-md)
+        border: 0;
+        border-radius: 0;
+        border-top: 2px solid var(--color-gray-light);
+        margin: 0 !important;
+        max-width: 100%;
+        padding: var(--space-md);
+        padding-right: calc(var(--space-md) + var(--text-md))
     }
 }
