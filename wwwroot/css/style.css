@@ -542,12 +542,6 @@ textarea::placeholder {
     width: 100%
 }
 
-.profile-item p,
-.profile-item span {
-    overflow: hidden;
-    text-overflow: ellipsis
-}
-
 .profile-item {
     margin-bottom: var(--space-md)
 }
@@ -555,6 +549,12 @@ textarea::placeholder {
 .profile-item:last-of-type {
     margin-bottom: 0
 }
+
+/* .profile-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+} */
 
 .exams-control {
     display: flex;
@@ -715,7 +715,10 @@ textarea::placeholder {
     color: var(--color-gray);
     display: block;
     font-size: var(--text-md);
-    margin-bottom: var(--space-xxxxs)
+    margin-bottom: var(--space-xxxxs);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
 }
 
 .desc:last-child {
@@ -739,8 +742,8 @@ i,
     display: inline-block;
     height: var(--text-md);
     position: relative;
-    width: var(--text-md);
-    /* flex-shrink: 0;
+    width: var(--text-md)
+        /* flex-shrink: 0;
     height: var(--size);
     max-width: initial;
     width: var(--size);
@@ -772,11 +775,11 @@ i,
 }
 
 [data-icon="user"] {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'%3E%3C/path%3E%3Ccircle cx='12' cy='7' r='4'%3E%3C/circle%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'%3E%3C/path%3E%3Ccircle cx='12' cy='7' r='4'%3E%3C/circle%3E%3C/svg%3E")
 }
 
 [data-icon="x"] {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E")
 }
 
 .link {
@@ -1279,4 +1282,16 @@ i,
         padding: var(--space-md);
         padding-right: calc(var(--space-md) + var(--text-md))
     }
+
+    .alert button {
+        top: calc(var(--space-md) + (.2 * var(--text-md)))
+    }
+}
+
+.profile-item p,
+.exams-item p,
+.medical-centers-item p,
+.menu-item a,
+.menu-v2-item p {
+    overflow-wrap: break-word
 }
